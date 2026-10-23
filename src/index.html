@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Screen Recorder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="titlebar">
+    <div class="titlebar-drag">
+      <span class="title-icon">●</span>
+      <span class="title-text">Screen Recorder</span>
+    </div>
+    <div class="titlebar-controls">
+      <button class="tb-btn" id="minBtn" title="Minimize">─</button>
+      <button class="tb-btn" id="maxBtn" title="Maximize">□</button>
+      <button class="tb-btn tb-close" id="closeBtn" title="Close">✕</button>
+    </div>
+  </div>
+
+  <div class="app">
+    <div class="preview-wrap">
+      <video id="preview" autoplay muted playsinline></video>
+      <div id="placeholder" class="placeholder">
+        <div class="ph-icon">🎥</div>
+        <p>Click "Start Recording" to pick a screen, window or tab</p>
+      </div>
+      <div id="recBadge" class="rec-badge hidden">● REC <span id="timer">00:00</span></div>
+    </div>
+
+    <div class="controls">
+      <div class="options">
+        <label class="toggle">
+          <input type="checkbox" id="sysAudio" checked>
+          <span>System audio</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="micAudio">
+          <span>Microphone</span>
+        </label>
+      </div>
+
+      <div class="buttons">
+        <button id="startBtn" class="btn btn-primary">▶ Start Recording</button>
+        <button id="pauseBtn" class="btn btn-secondary" disabled>⏸ Pause</button>
+        <button id="stopBtn"  class="btn btn-danger"  disabled>■ Stop</button>
+      </div>
+    </div>
+
+    <div id="status" class="status">Ready</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
